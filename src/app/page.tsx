@@ -1,8 +1,8 @@
 'use server'
-import ThemeSwitch from "@/components/SwitchTheme";
-import Link from '../components/Link'
+import ThemeSwitch from "@/components/ui/SwitchTheme";
+import Link from '../components/ui/Link'
 import { getPosts, toggleThemeCookie } from "./actions";
-import Pagination from "@/components/Pagination";
+import Pagination from "@/components/ui/Pagination";
 import Card from "@/components/blog/card";
 import { cookies } from "next/headers";
 import Presentation from "@/components/blog/Presentation";
@@ -72,7 +72,7 @@ export default async function Home() {
           <Card title={i.title} description={i.description} href={`${i.id}`} created_at={i.created} tags={i?.expand?.tags} key={i.id} />
         ))}
       </ul>
-      <Pagination />
+      <Pagination activePage={4} totalItems={90}/>
     </main>
   );
 }

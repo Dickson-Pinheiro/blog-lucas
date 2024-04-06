@@ -1,7 +1,7 @@
-import Link from '@/components/Link'
+import Link from '../ui/Link'
 //@ts-ignore
 import { formatDate } from 'pliny/utils/formatDate'
-import Tag from '../Tag'
+import Tag from '../ui/Tag'
 
 interface CardProps {
     title: string,
@@ -33,7 +33,7 @@ const Card = ({ title, description, href, created_at, tags }: CardProps) => (
                                 </Link>
                             </h2>
                             
-                            <div className="flex flex-wrap">
+                            <div className="flex flex-wrap ">
                                 {tags.map((tag) => (
                                     <Tag key={tag.tag} text={tag.tag} />
                                 ))}
