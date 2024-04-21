@@ -1,3 +1,4 @@
+//@ts-check
 import type { Config } from "tailwindcss";
 const colors = require('tailwindcss/colors')
 
@@ -16,22 +17,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {
-              color: 'red',
-            },
-            p: {
-              lineGeight: '9px'
-            }
-          }
-        },
-      },
+      
       colors: {
         primary: colors.red,
         gray: colors.gray,
       },
+      typography: {
+        p: '#ff0000',
+      }
     },
   },
   plugins: [

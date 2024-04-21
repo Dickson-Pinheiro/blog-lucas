@@ -27,6 +27,7 @@ const Card = ({ title, description, href, created_at, tags }: CardProps) => (
                             <h2 className="text-2xl font-bold leading-8 tracking-tight">
                                 <Link
                                     href={href}
+                                    target='_self'
                                     className="text-gray-900 dark:text-gray-100"
                                 >
                                     {title}
@@ -45,6 +46,7 @@ const Card = ({ title, description, href, created_at, tags }: CardProps) => (
                     </div>
                     <div className="text-base font-medium leading-6">
                         <Link
+                            target='_self'
                             href={href}
                             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                             aria-label={`Read more: "${title}"`}

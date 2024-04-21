@@ -3,10 +3,10 @@ import { cookies } from 'next/headers';
 import PocketBase from 'pocketbase'
 const conn = new PocketBase(process.env.POCKETBASE_URL);
 
-export async function getPosts(page: number){
-    return await conn.collection('posts').getList(page, 10, {
+export async function getPosts(page: number, max: number){
+    return conn.collection('posts').getList(page, max, {
         sort:'-created',
-        expand: 'tags'
+        expand: 'tags',
     })
 }
 
@@ -19,4 +19,19 @@ export async function toggleThemeCookie(){
         cookies().set('theme', 'dark')
         return 'dark'
     }
+}
+
+export async function getTags(){
+    return conn.collection('posts').getFullList({
+        sort:'-created',
+        expand: 'tags',
+        fields: 'expand'
+    })
+}
+
+export async function getProjects(){
+    return conn.collection('projects').getFullList({
+        expand: "images",
+        fields: "id, expand, Description, title, link, image"
+    })
 }

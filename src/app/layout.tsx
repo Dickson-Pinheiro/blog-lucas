@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   const theme = cookies().get('theme')
   return (
-    <html lang="en" className={`${theme?.value ? theme.value : 'light'}`}>
+    <html lang="en" className={`${theme?.value ? theme.value : 'light'}`} style={{scrollBehavior: 'smooth'}}>
       <body className='bg-gray-100  dark:bg-gray-950'>{children}</body>
     </html>
   );
