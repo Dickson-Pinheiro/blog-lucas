@@ -1,10 +1,8 @@
 'use server'
-import { getPosts, getTags } from "./actions";
+import { getPosts } from "./actions";
 import Card from "@/components/blog/card";
-import Presentation from "@/components/blog/Presentation";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
-import Pagination from "@/components/ui/Pagination";
 import Link from '@/components/ui/Link'
 
 export default async function Home( {params, searchParams }: { params: {}, searchParams: {[key: string]: string}}) {
@@ -18,10 +16,10 @@ export default async function Home( {params, searchParams }: { params: {}, searc
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pb-8 pt-6 md:space-y-5">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-              Latest
+              Mais recentes
             </h1>
             <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores fugiat necessitatibus illum temporibus sit, animi nobis in labore sapiente cupiditate dolor quas vel cum earum. Deleniti perferendis dicta illum necessitatibus.
+              Essas são as publicações mais atuais.
             </p>
           </div>
         </div>
