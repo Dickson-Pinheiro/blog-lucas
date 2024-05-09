@@ -4,10 +4,11 @@ import Card from "@/components/blog/card";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import Link from '@/components/ui/Link'
+import { unstable_cache } from "next/cache";
 
 export default async function Home( {params, searchParams }: { params: {}, searchParams: {[key: string]: string}}) {
   const page = searchParams?.page
-  const posts = await getPosts(page ? Number(page) : 1, 4)
+  const posts = await unstable_cache(() => getPosts(page? Number(page) : 1, 4), undefined, {revalidate: 60})()
 
   return (
     <main>
