@@ -5,6 +5,7 @@ import { formatDate } from "pliny/utils/formatDate.js"
 import { getPosts } from '../actions'
 import Pagination from '@/components/ui/Pagination'
 import Footer from '@/components/common/Footer'
+import { unstable_cache } from 'next/cache'
 
 interface AllPostProps {
     title: string,
@@ -53,7 +54,8 @@ export default async function PageBlog({
   }) {
     const page = searchParams?.page
 
-    const posts = await getPosts(page? Number(page) : 1, 10)
+   
+    const posts = await unstable_cache(() => getPosts(page? Number(page) : 1, 10), undefined, {revalidate: 60})()
 
     return(
         <main className='max-w-[1024px] mx-auto p-4'>
