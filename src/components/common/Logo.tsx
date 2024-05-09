@@ -1,6 +1,3 @@
-import Image from "next/image";
-import logoImage from '@/assets/bandeira-black.png'
-
 export default function Logo(){
     return(
         <>
