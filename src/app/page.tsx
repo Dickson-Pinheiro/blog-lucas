@@ -8,7 +8,7 @@ import { unstable_cache } from "next/cache";
 
 export default async function Home( {params, searchParams }: { params: {}, searchParams: {[key: string]: string}}) {
   const page = searchParams?.page
-  const posts = await unstable_cache(() => getPosts(page? Number(page) : 1, 4), undefined, {revalidate: 60})()
+  const posts = await unstable_cache(() => getPosts(page? Number(page) : 1, 4), undefined, {revalidate: 60 * 3})()
 
   return (
     <main>

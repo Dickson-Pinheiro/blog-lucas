@@ -55,7 +55,7 @@ export default async function PageBlog({
     const page = searchParams?.page
 
    
-    const posts = await unstable_cache(() => getPosts(page? Number(page) : 1, 10), undefined, {revalidate: 60})()
+    const posts = await unstable_cache(() => getPosts(page? Number(page) : 1, 10), undefined, {revalidate: 60 * 3})()
 
     return(
         <main className='max-w-[1024px] mx-auto p-4'>

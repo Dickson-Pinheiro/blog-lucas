@@ -3,9 +3,12 @@ import { getBlogById } from "./actions"
 import { twMerge } from "tailwind-merge"
 import AuthorLayout from "@/components/layouts/AuthorLayut"
 import Footer from "@/components/common/Footer"
+import { unstable_cache } from "next/cache"
 
 export default async function Blog({ params }: { params: { id: string } }) {
-    const blog = await getBlogById(params.id)
+    const blog = await unstable_cache(() => getBlogById(params.id), undefined, {
+        revalidate: 60 * 10
+    })()
     
     const classList = [
         'prose-headings:text-gray-900',
