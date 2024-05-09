@@ -33,7 +33,7 @@ export default async function Home( {params, searchParams }: { params: {}, searc
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 p-4"
             aria-label="All posts"
           >
-            All Posts &rarr;
+            veja mais &rarr;
           </Link>
         </div>
       <Footer/>

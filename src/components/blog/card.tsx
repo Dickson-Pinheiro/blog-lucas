@@ -18,7 +18,7 @@ const Card = ({ title, description, href, created_at, tags }: CardProps) => (
                 <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={created_at}>{formatDate(created_at)}</time>
+                        <time dateTime={created_at}>{new Date(created_at).toLocaleDateString()}</time>
                     </dd>
                 </dl>
                 <div className="space-y-5 xl:col-span-3">
@@ -51,7 +51,7 @@ const Card = ({ title, description, href, created_at, tags }: CardProps) => (
                             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                             aria-label={`Read more: "${title}"`}
                         >
-                            Read more &rarr;
+                            Ler mais &rarr;
                         </Link>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import Footer from '@/components/common/Footer'
 
 export default async function Projects() {
     const projects = await getProjects()
+    console.log(projects[0])
   return (
     <>
     <Header />
@@ -14,20 +15,21 @@ export default async function Projects() {
             Projects
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Showcase your projects with a hero image (16 x 9)
+            Esses são alguns dos projetos que faço parte
           </p>
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            {projects.map((d) => (
-              <Card
-                key={d.title}
-                title={d.title}
-                description={d.Description}
-                imgSrc={`${process.env.POCKETBASE_URL}/api/files/projects/${d.id}/${d.image}`}
-                href={d.link}
-              />
-            ))}
+            {projects.map((d) => {
+               return <Card
+                 key={d.title}
+                 title={d.title}
+                 description={d.Description}
+                 imgSrc={`${process.env.POCKETBASE_URL}/api/files/projects/${d.id}/${d.image}`}
+                 href={d.link}
+               />
+            } 
+            )}
           </div>
         </div>
       </div>

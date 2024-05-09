@@ -52,7 +52,7 @@ const CardProject = ({ title, description, imgSrc, href }: CardProjectProps) => 
             className="text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label={`Link to ${title}`}
           >
-            Learn more &rarr;
+            Veja mais &rarr;
           </Link>
         )}
       </div>
