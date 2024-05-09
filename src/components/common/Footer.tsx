@@ -16,15 +16,15 @@ export default function Footer() {
           <SocialIcon kind="threads" href={'threads.com'} size={6} />
         </div>
         <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{''}</div>
+          <div>{'Dickson Pinheiro'}</div>
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
-          <Link href="/">Blog</Link>
+          <Link href="https://github.com/Dickson-Pinheiro/">Github</Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
-            Bandeira Entretenimento
+          <Link href="/">
+            Lucas Alvez
           </Link>
         </div>
       </div>

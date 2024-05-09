@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {images: {
     remotePatterns: [{
-        hostname: '0.0.0.0',
+        hostname: 'cms.lucasalvez.com.br',
+        protocol: "https"
     }]
 }};
 

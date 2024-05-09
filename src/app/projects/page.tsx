@@ -5,7 +5,6 @@ import Footer from '@/components/common/Footer'
 
 export default async function Projects() {
     const projects = await getProjects()
-    console.log(projects[0])
   return (
     <>
     <Header />
