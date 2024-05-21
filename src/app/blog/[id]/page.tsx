@@ -7,9 +7,10 @@ import { unstable_cache } from "next/cache"
 
 export default async function Blog({ params }: { params: { id: string } }) {
     const blog = await unstable_cache(() => getBlogById(params.id), undefined, {
-        revalidate: 60 * 10
+        tags: [`${params.id}`],
+        revalidate: 60 * 3
     })()
-    
+
     const classList = [
         'prose-headings:text-gray-900',
         'dark:prose-headings:text-gray-200',
