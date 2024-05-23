@@ -2,9 +2,12 @@ import Card from '@/components/projects/CardProject'
 import { getProjects } from '../actions'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
+import { unstable_cache } from 'next/cache'
 
 export default async function Projects() {
-    const projects = await getProjects()
+    const projects = await unstable_cache(() => getProjects(), undefined, {
+      revalidate: 60 * 3
+    })()
   return (
     <>
     <Header />
